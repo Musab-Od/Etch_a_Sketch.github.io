@@ -48,12 +48,10 @@ function setSquareBackgroundColor(e) {
     if (e.type === "mousedown") {
         sketching = true;
         if (randomizingColors) penColor = createRandomColor();
-        // By default e.target.style.background = ""
+        
         if (shading) {
             if (e.target.style.backgroundColor != "") {
-                // e.target.style.backgroundColor returns an rgba string
-                // it needs to be converted and broken into penColor and shadingPercentage(opacity)
-                // eg. "rgba(0, 0, 0, 0.7)"
+                
                 penColor = convertRGBAToHexA(e.target.style.backgroundColor);
                 color =  e.target.style.backgroundColor;
                 currentShade = color.substring((color.length - 4), (color.length - 1));
